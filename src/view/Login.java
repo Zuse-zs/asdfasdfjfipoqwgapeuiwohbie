@@ -31,7 +31,7 @@ public class Login extends JFrame {
 	/* 登录页 */
 	public Login() {
 		super("登录入口");// 窗口标题
-		ImageIcon ico=new ImageIcon("Image/ico.png");
+		ImageIcon ico=new ImageIcon("img/ico.png");
 		this.setIconImage(ico.getImage());
 		Container c = this.getContentPane();// 添加内容面板
 		c.setLayout(null);
