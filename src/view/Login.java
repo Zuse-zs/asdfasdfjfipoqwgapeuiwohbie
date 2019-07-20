@@ -17,11 +17,11 @@ import java.util.TimerTask;
  * */
 public class Login extends JFrame {
 
-	JLabel JLName, JLpass, displayArea;
-	JTextField JTName;
-	JPasswordField JTpass;
-	JButton JBName, JBquit;
-	String time;
+	JLabel JLName, JLpass, displayArea;/*显示名称，和动态时间显示  */
+	JTextField JTName;/*文本框  */
+	JPasswordField JTpass;/*密码框  */
+	JButton JBName, JBquit;/*按钮  */
+	String time;/*时间  */
 
 	/* TODO 程序入口 */
 	public static void main(String[] args) {
@@ -30,10 +30,10 @@ public class Login extends JFrame {
 
 	/* 登录页 */
 	public Login() {
-		super("登录入口");// 窗口标题
+		super("登录入口");/* 窗口标题  */
 		ImageIcon ico=new ImageIcon("img/ico.png");
 		this.setIconImage(ico.getImage());
-		Container c = this.getContentPane();// 添加内容面板
+		Container c = this.getContentPane();/* 添加内容面板  */
 		c.setLayout(null);
 		JLName = new JLabel("用户名");
 		JLName.setFont(new Font("微软雅黑", 4, 15));
@@ -67,14 +67,11 @@ public class Login extends JFrame {
 		/* 登录按钮事件 */
 		JBName.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String Name = new String(JTName.getText());// 获得“用户名”文本框中的内容
-				String PassWord = new String(JTpass.getPassword());// 获得“密码”文本框中的内容
+				String Name = new String(JTName.getText());/* 获得“用户名”文本框中的内容  */
+				String PassWord = new String(JTpass.getPassword());/* 获得“密码”文本框中的内容  */
 				if("".equals(Name)&&"".equals(PassWord)){
-					setVisible(false);
-//					new zs(Name,PassWord);
-				}else if("1".equals(Name)&&"".equals(PassWord)){
-					setVisible(false);
-//					new zs(Name,PassWord);
+					setVisible(false);/* 隐藏登录窗口 */
+					new Index();/* 显示主页 */
 				}else{
 					JOptionPane.showMessageDialog(null, "账号或密码错误！", "提示",
 							JOptionPane.WARNING_MESSAGE);
@@ -91,26 +88,26 @@ public class Login extends JFrame {
 		});
 
 		/* 回车事件开始 */
-		JTpass.addKeyListener(new KeyAdapter() {// 为“密码”文本框添加键盘时间的监听
+		JTpass.addKeyListener(new KeyAdapter() {/* 为“密码”文本框添加键盘时间的监听  */
 			public void keyTyped(KeyEvent e) {
-				if (e.getKeyChar() == '\n') {// 按下的按键是回车时
-					JBName.doClick();// “登录”按钮执行点击事件
+				if (e.getKeyChar() == '\n') {/* 按下的按键是回车时  */
+					JBName.doClick();/* “登录”按钮执行点击事件  */
 				}
 			}
 		});
-		JTName.addKeyListener(new KeyAdapter() {// 为“用户名”文本框添加键盘时间的监听
+		JTName.addKeyListener(new KeyAdapter() {/* 为“用户名”文本框添加键盘时间的监听  */
 			public void keyTyped(KeyEvent e) {
-				if (e.getKeyChar() == '\n') {// 按下的按键是回车时
-					JBName.doClick();// “登录”按钮执行点击事件
+				if (e.getKeyChar() == '\n') {/* 按下的按键是回车时  */
+					JBName.doClick();/* “登录”按钮执行点击事件  */
 				}
 			}
 		});
 
-		this.setVisible(true);// 窗口可见性
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);// 关闭方式
-		this.setSize(300, 280);// 窗口大小
-		this.setLocationRelativeTo(null);// 窗口居中
-		this.setResizable(false);// 固定窗口
+		this.setVisible(true);/* 窗口可见性  */
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);/* 关闭方式  */
+		this.setSize(300, 280);/* 窗口大小  */
+		this.setLocationRelativeTo(null);/* 窗口居中  */
+		this.setResizable(false);/* 固定窗口  */
 	}
 
 	/* 登录页面动态时间  */
