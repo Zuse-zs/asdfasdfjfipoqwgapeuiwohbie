@@ -5,11 +5,12 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.*;
 
-public class $1 extends JPanel{
+/* 一个内容面板  */
+public class $1{
 
 
-    public JPanel Index1() {
-        this.setBorder(BorderFactory.createLineBorder(Color.cyan, 3));
+    public JPanel getJPanel() {
+        JPanel jPanel = new JPanel();
         /* 创建选项卡面板  */
         JTabbedPane tabbedPane = new JTabbedPane();
 
@@ -32,12 +33,12 @@ public class $1 extends JPanel{
         });
 
 
-
         /* 设置默认选中的选项卡  */
         tabbedPane.setSelectedIndex(0);
-        this.add(tabbedPane);
-        this.setLayout(new GridLayout(1, 1));
-        return this;
+        jPanel.add(tabbedPane);
+        jPanel.setLayout(new GridLayout(1, 1));
+        jPanel.setVisible(true);
+        return jPanel;
     }
 
 

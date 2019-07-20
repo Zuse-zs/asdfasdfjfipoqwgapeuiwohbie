@@ -52,7 +52,7 @@ public class Login extends JFrame {
 		JBquit.setFont(new Font("微软雅黑", 4, 15));
 		JBquit.setBounds(170, 160, 70, 35);
 		displayArea = new JLabel();
-		displayArea.setBounds(140, 230, 150, 30);
+		displayArea.setBounds(130, 220, 150, 30);
 
 		c.add(JLName);
 		c.add(JLpass);

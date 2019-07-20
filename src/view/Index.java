@@ -8,44 +8,50 @@ import java.awt.event.ActionListener;
 public class Index extends JFrame implements ActionListener{
 
 
-    JPanel panel = new JPanel(new GridLayout(1, 1));
+    /* 放在顶级容器的面板 */
     JPanel p = new JPanel(new GridLayout(1, 1));
-    /* 创建一个菜单栏 */
+    /* 创建一个菜单栏组件 */
     JMenuBar menuBar = new JMenuBar();
-    /* 创建一级菜单 */
-    JMenu fileMenu = new JMenu("文件");
-    /* 创建 "文件" 一级菜单的子菜单 */
+    /* 创建一级菜单组件 */
+    JMenu fileMenu = new JMenu("菜单");
+    /* 创建 菜单项组件 */
     JMenuItem newMenuItem = new JMenuItem("菜单项1");
     JMenuItem openMenuItem = new JMenuItem("菜单项2");
 
 
 
     public Index() {
-        super("登录入口");/* 窗口标题  */
+        /* 窗口标题  */
+        super("首页");
+        /* 容器布局  1行1列  */
         this.setLayout(new GridLayout(1, 1));
 
 
         /* 一级菜单添加到菜单栏 */
         menuBar.add(fileMenu);
-        /* 子菜单添加到一级菜单 */
+        /* 子级菜单添加监听事件 */
         newMenuItem.addActionListener(this);
         openMenuItem.addActionListener(this);
+        /* 子菜单添加到一级菜单 */
         fileMenu.add(newMenuItem);
+        /* 添加一条分割线 */
+        fileMenu.addSeparator();
+        /* 子菜单添加到一级菜单 */
         fileMenu.add(openMenuItem);
-        fileMenu.addSeparator();/* 添加一条分割线 */
 
 
 
-        JLabel label = new JLabel("666666666666666666");
+        /* 组件 */
+        JLabel label = new JLabel("武器库");
         label.setFont(new Font(null, Font.PLAIN, 50));
         label.setHorizontalAlignment(SwingConstants.CENTER);
         p.add(label);
 
 
-        p.setBorder(BorderFactory.createLineBorder(Color.cyan, 3));
-        panel.setBorder(BorderFactory.createLineBorder(Color.red, 3));
-        panel.add(p);
-        this.add(panel);
+
+        /* 将 面板 加入顶级容器 */
+        this.add(p);
+        /* 将 菜单 加入顶级容器 */
         this.setJMenuBar(menuBar);
 
 
@@ -57,18 +63,22 @@ public class Index extends JFrame implements ActionListener{
         this.setVisible(true);/* 窗口可见性  */
     }
 
-
+    /* 监听菜单点击  移除覆盖刷新 面板   */
     @Override
     public void actionPerformed(ActionEvent e) {
-            if (e.getSource().equals(newMenuItem)) {
-                p.removeAll();
-                panel.removeAll();
-                p = new $1();
-                panel.add(p);
-                panel.validate();
-                panel.repaint();
-                panel.revalidate();
-                panel.setVisible(true);
-            }
+        if (e.getSource().equals(newMenuItem)) {
+            p.removeAll();
+            p.add(new $1().getJPanel());
+            p.validate();
+            p.repaint();
+            setVisible(true);
+        }
+        if (e.getSource().equals(openMenuItem)) {
+            p.removeAll();
+            p.add(new $1().getJPanel());
+            p.validate();
+            p.repaint();
+            setVisible(true);
+        }
     }
 }
