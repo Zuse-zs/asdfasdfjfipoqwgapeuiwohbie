@@ -40,17 +40,24 @@ public class Index extends JFrame implements ActionListener{
         label.setFont(new Font(null, Font.PLAIN, 50));
         label.setHorizontalAlignment(SwingConstants.CENTER);
         p.add(label);
+
+
         p.setBorder(BorderFactory.createLineBorder(Color.cyan, 3));
         panel.setBorder(BorderFactory.createLineBorder(Color.red, 3));
         panel.add(p);
         this.add(panel);
         this.setJMenuBar(menuBar);
+
+
+
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);/* 关闭方式  */
         this.setSize(1000, 650);/* 窗口大小  */
         this.setLocationRelativeTo(null);/* 窗口居中  */
         this.setResizable(false);/* 固定窗口  */
         this.setVisible(true);/* 窗口可见性  */
     }
+
+
     @Override
     public void actionPerformed(ActionEvent e) {
             if (e.getSource().equals(newMenuItem)) {
