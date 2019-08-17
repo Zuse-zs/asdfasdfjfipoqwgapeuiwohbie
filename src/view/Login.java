@@ -1,5 +1,6 @@
 package view;
 
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -103,7 +104,10 @@ public class Login extends JFrame {
 			}
 		});
 
-		this.setVisible(true);/* 窗口可见性  */
+
+
+        JOptionPane.showMessageDialog(null, "兄台！有没有好的源码贡献拉", "by：1371576853", JOptionPane.PLAIN_MESSAGE);
+        this.setVisible(true);/* 窗口可见性  */
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);/* 关闭方式  */
 		this.setSize(300, 280);/* 窗口大小  */
 		this.setLocationRelativeTo(null);/* 窗口居中  */

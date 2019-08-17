@@ -35,7 +35,7 @@ public final class ImgHandler {
 
 
 
-    
+
 
 
     public static void getData(String path){

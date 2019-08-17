@@ -76,6 +76,7 @@ public class TransparencyFrame extends JFrame {
     }
     protected void do_slider_stateChanged(ChangeEvent e) {
         int value = slider.getValue();//获取滑块当前的数值
+        System.out.println(value);
         AWTUtilities.setWindowOpacity(this, value / 100f);//使用滑块设置窗体的透明度
     }
 }
