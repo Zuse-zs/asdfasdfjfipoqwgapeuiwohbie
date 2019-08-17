@@ -3,7 +3,7 @@ package view.menuitem.menuitem1;
 import javax.swing.*;
 import java.awt.*;
 
-public class 菜单1面板3 {
+public class Menu_1_Panel_4 {
 
 
     /* 创建一个面板，面板中心显示一个标签，用于表示某个选项卡需要显示的内容 */
