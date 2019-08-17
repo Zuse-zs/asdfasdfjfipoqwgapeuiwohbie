@@ -6,13 +6,37 @@ import java.awt.image.BufferedImage;
 import java.awt.image.Raster;
 import java.io.File;
 import java.io.IOException;
-
 import static org.fusesource.jansi.Ansi.*;
 import static org.fusesource.jansi.Ansi.Color.*;
 
-
-
 public final class ImgHandler {
+
+    public static void main(String [] args){
+        getData("img/3_10x10.jpg");
+        getData("img/6_10x10.jpg");
+        getData("img/2x2_1.jpg");
+
+        System.out.println("Hello \u001b[31m red \u001b[0m");
+        /* "BLACK", "RED", "GREEN", "YELLOW", "BLUE", "MAGENTA", "CYAN", "WHITE" */
+        System.out.print( ansi().eraseScreen().fg(BLACK).a("■").reset());
+        System.out.print( ansi().eraseScreen().fg(RED).a("■").reset());
+        System.out.print( ansi().eraseScreen().fg(GREEN).a("■").reset());
+        System.out.print( ansi().eraseScreen().fg(YELLOW).a("■").reset());
+        System.out.print( ansi().eraseScreen().fg(BLUE).a("■").reset());
+        System.out.print( ansi().eraseScreen().fg(MAGENTA).a("■").reset());
+        System.out.print( ansi().eraseScreen().fg(CYAN).a("■").reset());
+        System.out.print( ansi().eraseScreen().fg(WHITE).a("■").reset());
+        System.out.println();
+        System.out.println(ansi().eraseScreen().fg(RED).a("测试不加reset()"));
+        System.out.println("测试不加reset()");
+
+        getData("img/zs.jpg");
+    }
+
+
+
+    
+
 
     public static void getData(String path){
         try{
@@ -48,28 +72,6 @@ public final class ImgHandler {
             e.printStackTrace();
         }
 
-    }
-
-    public static void main(String [] args){
-        getData("img/3_10x10.jpg");
-        getData("img/6_10x10.jpg");
-        getData("img/2x2_1.jpg");
-
-
-
-        System.out.println("Hello \u001b[31m red \u001b[0m");
-        /* "BLACK", "RED", "GREEN", "YELLOW", "BLUE", "MAGENTA", "CYAN", "WHITE" */
-        System.out.print( ansi().eraseScreen().fg(BLACK).a("■").reset());
-        System.out.print( ansi().eraseScreen().fg(RED).a("■").reset());
-        System.out.print( ansi().eraseScreen().fg(GREEN).a("■").reset());
-        System.out.print( ansi().eraseScreen().fg(YELLOW).a("■").reset());
-        System.out.print( ansi().eraseScreen().fg(BLUE).a("■").reset());
-        System.out.print( ansi().eraseScreen().fg(MAGENTA).a("■").reset());
-        System.out.print( ansi().eraseScreen().fg(CYAN).a("■").reset());
-        System.out.print( ansi().eraseScreen().fg(WHITE).a("■").reset());
-        System.out.println();
-        System.out.println(ansi().eraseScreen().fg(RED).a("测试不加reset()"));
-        System.out.println("测试不加reset()");
     }
 
 
