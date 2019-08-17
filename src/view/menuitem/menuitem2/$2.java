@@ -1,4 +1,4 @@
-package view;
+package view.menuitem.menuitem2;
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
@@ -6,7 +6,7 @@ import javax.swing.event.ChangeListener;
 import java.awt.*;
 
 /* 一个内容面板  */
-public class $1{
+public class $2 {
 
 
     public JPanel getJPanel() {
@@ -15,9 +15,9 @@ public class $1{
         JTabbedPane tabbedPane = new JTabbedPane();
 
         /* 创建  选项卡（选项卡包含 标题、图标 和 tip提示）  */
-        tabbedPane.addTab("选项卡", null, createTextPanel("选项卡"), "提示");
-        tabbedPane.addTab("选项卡", null, createTextPanel("选项卡"), "提示");
-        tabbedPane.addTab("选项卡", null, createTextPanel("选项卡"), "提示");
+        tabbedPane.addTab("选项卡", null, createTextPanel("选项卡1"), "提示");
+        tabbedPane.addTab("选项卡", null, createTextPanel("选项卡2"), "提示");
+        tabbedPane.addTab("选项卡", null, createTextPanel("选项卡3"), "提示");
         tabbedPane.addTab("选项卡", null, createTextPanel("选项卡"), "提示");
         tabbedPane.addTab("选项卡", null, createTextPanel("选项卡"), "提示");
         tabbedPane.addTab("选项卡", null, createTextPanel("选项卡"), "提示");

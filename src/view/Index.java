@@ -1,5 +1,8 @@
 package view;
 
+import view.menuitem.menuitem1.$1;
+import view.menuitem.menuitem2.$2;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -75,7 +78,7 @@ public class Index extends JFrame implements ActionListener{
         }
         if (e.getSource().equals(openMenuItem)) {
             p.removeAll();
-            p.add(new $1().getJPanel());
+            p.add(new $2().getJPanel());
             p.validate();
             p.repaint();
             setVisible(true);
