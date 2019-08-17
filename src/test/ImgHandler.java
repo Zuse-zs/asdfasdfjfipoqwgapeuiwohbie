@@ -9,6 +9,7 @@ import java.io.IOException;
 import static org.fusesource.jansi.Ansi.*;
 import static org.fusesource.jansi.Ansi.Color.*;
 
+/* 图像识别 ，可以试着运行 看控制台输出，还没做到识别数字啥的，需要CNN搭配，不然逻辑代码得写很多 */
 public final class ImgHandler {
 
     public static void main(String [] args){

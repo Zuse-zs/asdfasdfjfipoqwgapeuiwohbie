@@ -11,6 +11,7 @@ import java.util.TimerTask;
 import java.util.concurrent.*;
 
 
+/*  没啥用，测试线程  */
 public class Test extends JFrame {
 
 

@@ -12,6 +12,9 @@ import java.util.Random;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
+
+
+/*  这个应该后期会用 ，写的测试方法，关于线程池和任务队列，（线程始终只有你设定的那么多，每执行一个方法，将此方法加入任务，就视为一个任务，并且排队等候前面的任务进行（相当于火车站买票一样，通道、排队））  */
 public class test$1 {
 
 

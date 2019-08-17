@@ -28,9 +28,11 @@ public class Index extends JFrame implements ActionListener{
 
     public Index() {
         /* 窗口标题  */
-        super("首页");
+        super("武器库");
         /* 容器布局  1行1列  */
         this.setLayout(new GridLayout(1, 1));
+        ImageIcon ico=new ImageIcon("img/ico.png");/* 图标 */
+        this.setIconImage(ico.getImage());
 //        this.setLayout(null);
 
 

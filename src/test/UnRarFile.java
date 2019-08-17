@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 
 public class UnRarFile {
 
+    /*  压缩 解压  可以 试着 爆破，基于rar32自带的cli命令爆破  */
     public static void main(String[] args) {
         compressRAR("D:\\rar\\1.txt", "D:\\rar\\6.rar","666");
 
