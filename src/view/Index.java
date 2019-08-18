@@ -106,7 +106,7 @@ public class Index extends JFrame implements ActionListener{
         /* 将 菜单 加入顶级容器 */
         this.setJMenuBar(menuBar);
 
-        JOptionPane.showMessageDialog(null, "三击 灭霸/菜单栏  关闭程序奥。", "提示", JOptionPane.WARNING_MESSAGE);
+//        JOptionPane.showMessageDialog(null, "三击 灭霸/菜单栏  关闭程序奥。", "提示", JOptionPane.WARNING_MESSAGE);
 
         /* 透明度 */
         this.setUndecorated(true);
