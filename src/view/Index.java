@@ -48,6 +48,7 @@ public class Index extends JFrame implements ActionListener{
         exitMenu.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
+                System.exit(0);/* 结束程序 */
                 setVisible(false);/* 隐藏窗口 */
                 if(b){
                     try {
@@ -109,7 +110,7 @@ public class Index extends JFrame implements ActionListener{
 
         /* 透明度 */
         this.setUndecorated(true);
-        AWTUtilities.setWindowOpacity(this, 80 / 100f);/* 透明值 1~100 */
+        AWTUtilities.setWindowOpacity(this, 100 / 100f);/* 透明值 1~100 */
 
         reSizeEvent dg = new reSizeEvent(this);
         /* 添加两个监听器，都是鼠标的不能缺少不然影响拖动移动 */
@@ -141,4 +142,9 @@ public class Index extends JFrame implements ActionListener{
         }
     }
 
+
+    @Override
+    public void print(Graphics g) {
+
+    }
 }

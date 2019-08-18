@@ -13,7 +13,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 /* 一个内容面板  先继承一下  实现一下不用每个监听事件写一大堆代码       */
-public class $1 extends zs_JPanel implements ActionListener {
+public class $1 extends zs_JPanel{
 
 
     public JPanel getJPanel(JFrame jf) {
@@ -76,10 +76,5 @@ public class $1 extends zs_JPanel implements ActionListener {
         label.setHorizontalAlignment(SwingConstants.CENTER);
         panel.add(label);
         return panel;
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-
     }
 }

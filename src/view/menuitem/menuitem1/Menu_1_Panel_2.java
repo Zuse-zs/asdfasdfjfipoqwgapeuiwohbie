@@ -1,10 +1,13 @@
 package view.menuitem.menuitem1;
 
+import com.sun.awt.AWTUtilities;
 import org.fusesource.jansi.Ansi;
 import view.common.zs_JPanel;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -53,14 +56,47 @@ public class Menu_1_Panel_2  extends zs_JPanel implements ActionListener {
             }
         }
         ImageIcon icon = new ImageIcon(image);
-        /* 创建标签  */
-        JLabel label = new JLabel(icon);
-        label.setBounds(350,200,100,100);/* 设置位置 */
-        label.setBorder(BorderFactory.createLineBorder(Color.red));/* 边框 */
-        label.setFont(new Font(null, Font.PLAIN, 50));
-        label.setHorizontalAlignment(SwingConstants.CENTER);
-        /* 添加标签到面板  */
-        panel.add(label);
+        /* 创建图片标签 和 提示标签 */
+        JLabel labelImg = new JLabel(icon);
+        labelImg.setBounds(350,200,100,100);/* 设置位置 */
+        labelImg.setBorder(BorderFactory.createLineBorder(Color.red));/* 边框 */
+        labelImg.setFont(new Font(null, Font.PLAIN, 50));
+        labelImg.setHorizontalAlignment(SwingConstants.CENTER);
+
+        JLabel labelImgMsg = new JLabel("生成图片");
+        labelImgMsg.setBounds(300,150,300,40);/* 设置位置 */
+        labelImgMsg.setBorder(BorderFactory.createLineBorder(Color.red));/* 边框 */
+        labelImgMsg.setForeground(Color.black);
+        labelImgMsg.setFont(new Font(null, Font.PLAIN, 20));
+        labelImgMsg.setHorizontalAlignment(SwingConstants.CENTER);
+
+        /* 创建滚动条 和 提示标签 */
+        JLabel sliderMsg = new JLabel("窗口透明度:80%");
+        sliderMsg.setBounds(0,10,300,40);/* 设置位置 */
+        sliderMsg.setBorder(BorderFactory.createLineBorder(Color.red));/* 边框 */
+        sliderMsg.setForeground(Color.black);
+        sliderMsg.setFont(new Font(null, Font.PLAIN, 18));
+        sliderMsg.setHorizontalAlignment(SwingConstants.CENTER);
+        JSlider slider;
+        slider = new JSlider();
+        slider.setValue(100);
+        /* 添加事件 */
+        slider.addChangeListener(new ChangeListener() {
+            public void stateChanged(ChangeEvent e) {
+                do_slider_stateChanged(e,slider,jf,sliderMsg);
+            }
+        });
+        slider.setOpaque(false);
+        slider.setBounds(20, 60, 260, 20);
+
+
+
+
+        /* 添加 组件 到面板  */
+        panel.add(labelImg);
+        panel.add(labelImgMsg);
+        panel.add(slider);
+        panel.add(sliderMsg);
         return panel;
     }
 
@@ -69,6 +105,17 @@ public class Menu_1_Panel_2  extends zs_JPanel implements ActionListener {
 
     }
 
+    private static void do_slider_stateChanged(ChangeEvent e, JSlider slider, JFrame jf,JLabel sliderMsg) {
+        int value = slider.getValue();//获取滑块当前的数值
+        sliderMsg.setText("窗口透明度:"+value+"%");
+        if(value<2){
+            JOptionPane.showMessageDialog(null, "完全透明窗口将不存在，无法捕获", "提示", JOptionPane.ERROR_MESSAGE);
+            slider.setValue(50);
+            AWTUtilities.setWindowOpacity(jf, 50 / 100f);//使用滑块设置窗体的透明度
+        }else{
+            AWTUtilities.setWindowOpacity(jf, value / 100f);//使用滑块设置窗体的透明度
+        }
+    }
 
     /* 我手写的针对控制台输出使用的颜色阈值 */
     public static Ansi.Color putColor(String RGB){
