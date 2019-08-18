@@ -68,6 +68,7 @@ class CanvasJPanel extends JPanel implements MouseMotionListener{
             g2.setBackground(Color.WHITE);//设置背景色
             g2.clearRect(0, 0, 1000, 600);//通过使用当前绘图表面的背景色进行填充来清除指定的矩形。
             b = false;
+
         }
         g2.setColor(Color.red);
         g2.drawOval(x,y,10,10);
