@@ -22,7 +22,7 @@ public class $1 extends zs_JPanel implements ActionListener {
 
         /* 创建  选项卡（选项卡包含 标题、图标 和 tip提示）  */
         jTabbedPane.addTab("选项卡a", null, temporaryCreateJPanel(""), "提示");
-        jTabbedPane.addTab("选项卡b", null, temporaryCreateJPanel(""), "提示");
+        jTabbedPane.addTab("图片读取生成", null, temporaryCreateJPanel(""), "提示");
         jTabbedPane.addTab("选项卡c", null, temporaryCreateJPanel(""), "提示");
         jTabbedPane.addTab("选项卡d", null, temporaryCreateJPanel(""), "提示");
 
