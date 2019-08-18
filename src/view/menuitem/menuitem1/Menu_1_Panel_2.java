@@ -20,7 +20,8 @@ public class Menu_1_Panel_2  extends zs_JPanel implements ActionListener {
     /* 创建一个面板，面板中心显示一个标签，用于表示某个选项卡需要显示的内容 */
     public static JComponent getJPanel(JFrame jf) {
         /* 创建面板, 使用一个 1 行 1 列的网格布局（为了让标签的宽高自动撑满面板）  */
-        JPanel panel = new JPanel(new GridLayout(1, 1));
+        JPanel panel = new JPanel();
+        panel.setLayout(null);/* 设置布局为空 */
 
 
         /* 控制台简易输出图片 */
@@ -54,6 +55,8 @@ public class Menu_1_Panel_2  extends zs_JPanel implements ActionListener {
         ImageIcon icon = new ImageIcon(image);
         /* 创建标签  */
         JLabel label = new JLabel(icon);
+        label.setBounds(350,200,100,100);/* 设置位置 */
+        label.setBorder(BorderFactory.createLineBorder(Color.red));/* 边框 */
         label.setFont(new Font(null, Font.PLAIN, 50));
         label.setHorizontalAlignment(SwingConstants.CENTER);
         /* 添加标签到面板  */

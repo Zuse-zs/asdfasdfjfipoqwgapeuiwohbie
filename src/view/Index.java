@@ -8,6 +8,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.net.URL;
 
 public class Index extends JFrame implements ActionListener{
@@ -19,12 +21,12 @@ public class Index extends JFrame implements ActionListener{
     JMenuBar menuBar = new JMenuBar();
     /* 创建一级菜单组件 */
     JMenu fileMenu = new JMenu("菜单");
+    JMenu exitMenu = new JMenu("✕");
     /* 创建 菜单项组件 */
     JMenuItem newMenuItem = new JMenuItem("菜单项1");
     JMenuItem openMenuItem = new JMenuItem("菜单项2");
-    JMenuItem exitMenuItem = new JMenuItem("退出");
-
-
+    /* 恶搞 */
+    boolean b = true;
 
     public Index() {
         /* 窗口标题  */
@@ -33,30 +35,58 @@ public class Index extends JFrame implements ActionListener{
         this.setLayout(new GridLayout(1, 1));
         ImageIcon ico=new ImageIcon("img/ico.png");/* 图标 */
         this.setIconImage(ico.getImage());
-//        this.setLayout(null);
 
 
         fileMenu.setPreferredSize(new Dimension(100,30));
         menuBar.setBorder(BorderFactory.createLineBorder(Color.black));/* 边框 */
+
         /* 一级菜单添加到菜单栏 */
         menuBar.add(fileMenu);
+        menuBar.add(Box.createHorizontalGlue());
+        menuBar.add(exitMenu);
+        /* 监听事件 */
+        exitMenu.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                setVisible(false);/* 隐藏窗口 */
+                if(b){
+                    try {
+                        Thread.sleep(3000);/* 3秒吧~ */
+                    } catch (InterruptedException e1) {
+                        e1.printStackTrace();
+                    }
+                    setVisible(true);/* 显示窗口 */
+                    JOptionPane.showMessageDialog(null, "我又出来了！3秒过后我又是一条好汉~", "哈哈", JOptionPane.ERROR_MESSAGE);
+                    b = false;
+
+                    try {
+                        Thread.sleep(3000);/* 3秒吧~ */
+                    } catch (InterruptedException e1) {
+                        e1.printStackTrace();
+                    }
+                    System.exit(0);/* 结束程序 */
+
+                }else {
+                    System.exit(0);/* 结束程序 */
+                }
+            }
+            public void mousePressed(MouseEvent e) {}
+            public void mouseReleased(MouseEvent e) {}
+            public void mouseEntered(MouseEvent e) {}
+            public void mouseExited(MouseEvent e) {}
+        });
+
         /* 子级菜单添加监听事件 */
         newMenuItem.addActionListener(this);
         openMenuItem.addActionListener(this);
-        exitMenuItem.addActionListener(this);
         newMenuItem.setPreferredSize(new Dimension(100,30));
         openMenuItem.setPreferredSize(new Dimension(100,30));
-        exitMenuItem.setPreferredSize(new Dimension(100,30));
         /* 子菜单添加到一级菜单 */
         fileMenu.add(newMenuItem);
         /* 添加一条分割线 */
         fileMenu.addSeparator();
         /* 子菜单添加到一级菜单 */
         fileMenu.add(openMenuItem);
-        /* 添加一条分割线 */
-        fileMenu.addSeparator();
-        /* 子菜单添加到一级菜单 */
-        fileMenu.add(exitMenuItem);
 
 
         ImageIcon img = new ImageIcon("img/thanos.jpg");//这是背景图片
@@ -109,30 +139,6 @@ public class Index extends JFrame implements ActionListener{
             p.repaint();
             setVisible(true);
         }
-        if (e.getSource().equals(exitMenuItem)) {
-            this.setVisible(false);/* 隐藏窗口 */
-            if(b){
-                try {
-                    Thread.sleep(3000);/* 3秒吧~ */
-                } catch (InterruptedException e1) {
-                    e1.printStackTrace();
-                }
-                this.setVisible(true);/* 显示窗口 */
-                JOptionPane.showMessageDialog(null, "我又出来了！3秒过后我又是一条好汉~", "哈哈", JOptionPane.ERROR_MESSAGE);
-                b = false;
-
-                try {
-                    Thread.sleep(3000);/* 3秒吧~ */
-                } catch (InterruptedException e1) {
-                    e1.printStackTrace();
-                }
-                System.exit(0);/* 结束程序 */
-
-            }else {
-                System.exit(0);/* 结束程序 */
-            }
-        }
     }
 
-    boolean b = true;
 }

@@ -12,7 +12,7 @@ import java.awt.event.MouseEvent;
 public class reSizeEvent extends MouseAdapter{
     public JFrame jf;
     private Point prePos,curPos,jfPos;
-    private static final double BREADTH = 5.0;//边界拉伸范围
+    private static final double BREADTH = 3.0;//边界拉伸范围
     private  int dragType;
     private static final int DRAG_MOVE = 1;
     private static final int DRAG_UP = 2;
